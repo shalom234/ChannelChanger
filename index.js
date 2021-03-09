@@ -103,6 +103,7 @@ const onMessage = async function(message) {
                             try {
                                 m.setNickname(nickname);
                             } catch(e) {
+                                sendEmbed("Cannot manage " + m.user.username + "'s nickname")
                                 return console.log(m.user.username + " is unmanageable");
                             }
                         }
@@ -116,4 +117,3 @@ const onMessage = async function(message) {
 
 bot.on("message", message=>onMessage(message));
 bot.login(process.env.token);
-
